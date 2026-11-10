@@ -89,3 +89,39 @@ body > header .filter { grid-column: 1; }
   body > header .filter { grid-column: 1/-1; }
   body > header .cover-mode { grid-column: 1/-1; grid-row: 4; }
 }
+body > header .gallery-tools {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.gallery-tools nav, .gallery-tools .cover-mode {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  margin: 0;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.gallery-tools a, .gallery-tools label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.gallery-tools a[aria-current] { color: white; background: var(--ink); }
+body > header .filter:has(#compare[hidden]) { display:none; }
+@media (max-width: 780px) {
+  body > header .gallery-tools { grid-column: 1/-1; grid-row: 3; justify-self: start; margin-top: 10px; }
+  body > header .filter { grid-row: 4; }
+  .gallery-tools a, .gallery-tools label { padding: 0 8px; }
+}
