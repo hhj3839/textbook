@@ -7,17 +7,16 @@
   const photo = viewer.querySelector('img');
   const [close, prev, next] = viewer.querySelectorAll('button');
   let items = [], index = 0, start = null;
-  const frontOnly = document.querySelector('#front-only');
+  const frontOnly = document.documentElement.classList.contains('front-mode');
   function updateCoverSources() {
     for (const link of document.querySelectorAll('a[data-front]')) {
       const img = link.querySelector('img');
       img.dataset.spreadSources ||= img.srcset;
-      img.srcset = frontOnly.checked ? link.dataset.front : img.dataset.spreadSources;
-      img.classList.toggle('front-page', frontOnly.checked);
+      img.srcset = frontOnly ? link.dataset.front : img.dataset.spreadSources;
+      img.classList.toggle('front-page', frontOnly);
     }
   }
   if (frontOnly) {
-    frontOnly.closest('fieldset').addEventListener('change', updateCoverSources);
     window.addEventListener('pageshow', updateCoverSources);
     updateCoverSources();
   }
@@ -25,7 +24,7 @@
     const link = items[index];
     const name = link.querySelector('img').alt;
     photo.alt = name;
-    const front = frontOnly?.checked && link.dataset.front;
+    const front = frontOnly && link.dataset.front;
     photo.classList.toggle('front-page', Boolean(front));
     photo.src = front || link.href;
     viewer.querySelector('strong').textContent = name;
