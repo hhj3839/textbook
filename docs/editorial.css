@@ -2,17 +2,17 @@
   --ink: #212121;
   --secondary: #595959;
   --rule: #d4d4d4;
-  --serif: "Nanum Myeongjo", AppleMyungjo, Batang, serif;
+  --gallery-font: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   accent-color: var(--ink);
 }
-body { color: var(--ink); background: white; }
+body { color: var(--ink); background: white; font-family: var(--gallery-font); }
 body > header {
   display: grid;
   grid-template-columns: minmax(0,1fr) max-content;
   align-items: baseline;
   gap: 0 24px;
 }
-body > header h1 { grid-column: 1; grid-row: 1; font: 700 clamp(32px,4.4vw,66px)/1.18 var(--serif); letter-spacing: -.06em; }
+body > header h1 { grid-column: 1; grid-row: 1; font: 700 clamp(32px,4.4vw,66px)/1.18 var(--gallery-font); letter-spacing: -.06em; }
 body > header nav { grid-column: 2; grid-row: 1; border: 0; gap: 1.4rem; }
 nav a, header p, .pick { color: var(--secondary); }
 nav a[aria-current] { color: var(--ink); border-bottom: 2px solid; }
@@ -27,10 +27,10 @@ body > header .filter { grid-column: 1; grid-row: 3; flex-wrap: wrap; }
 .cover-mode { grid-column: 2; grid-row: 3; align-self: center; }
 .filter button, select { background: white; border: 1px solid var(--rule); border-radius: 2px; }
 .filter button:enabled { color: white; background: var(--ink); }
-main h2 { font-family: var(--serif); letter-spacing: -.035em; }
+main h2 { font-family: var(--gallery-font); letter-spacing: -.035em; }
 .grid { gap: 30px clamp(14px,2vw,30px); }
 .grid img { background: #fafafa; }
-.grid .number { position: static; display: inline; padding: 0; margin-right: .65em; border: 0; color: var(--ink); font: 700 16px/1.6 system-ui; }
+.grid .number { position: static; display: inline; padding: 0; margin-right: .65em; border: 0; color: var(--ink); font: 700 16px/1.6 var(--gallery-font); }
 .grid .number + span { display: inline; font-size: 15px; }
 .grid a:has(.number) img { margin-bottom: 8px; }
 .pick { font-size: 13px; }
