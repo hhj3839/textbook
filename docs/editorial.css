@@ -118,6 +118,10 @@ body > header .gallery-tools {
   font-size: 14px;
   white-space: nowrap;
 }
+.gallery-tools input[type="radio"] { position: absolute; opacity: 0; margin: 0; }
+.gallery-tools label { position: relative; cursor: pointer; font-weight: 500; }
+.gallery-tools label:has(input:checked) { color: white; background: var(--ink); }
+.gallery-tools label:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
 .gallery-tools a[aria-current] { color: white; background: var(--ink); }
 body > header .filter:has(#compare[hidden]) { display:none; }
 @media (max-width: 780px) {
