@@ -39,4 +39,4 @@ main h2 { font-family: var(--serif); letter-spacing: -.035em; }
   body > header nav { gap: .75rem; font-size: 14px; }
   body > header .filter { grid-column: 1/-1; }
   .cover-mode { grid-column: 1/-1; grid-row: 4; margin-top: 5px; }
-}
+}body:has(#front-only:checked) .grid img.front-page { height: auto; aspect-ratio: auto; }

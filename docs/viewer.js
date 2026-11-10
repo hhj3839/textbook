@@ -7,11 +7,27 @@
   const photo = viewer.querySelector('img');
   const [close, prev, next] = viewer.querySelectorAll('button');
   let items = [], index = 0, start = null;
+  const frontOnly = document.querySelector('#front-only');
+  function updateCoverSources() {
+    for (const link of document.querySelectorAll('a[data-front]')) {
+      const img = link.querySelector('img');
+      img.dataset.spreadSources ||= img.srcset;
+      img.srcset = frontOnly.checked ? link.dataset.front : img.dataset.spreadSources;
+      img.classList.toggle('front-page', frontOnly.checked);
+    }
+  }
+  if (frontOnly) {
+    frontOnly.closest('fieldset').addEventListener('change', updateCoverSources);
+    window.addEventListener('pageshow', updateCoverSources);
+    updateCoverSources();
+  }
   function show() {
     const link = items[index];
     const name = link.querySelector('img').alt;
     photo.alt = name;
-    photo.src = link.href;
+    const front = frontOnly?.checked && link.dataset.front;
+    photo.classList.toggle('front-page', Boolean(front));
+    photo.src = front || link.href;
     viewer.querySelector('strong').textContent = name;
     viewer.querySelector('output').textContent = (index + 1) + ' / ' + items.length;
     prev.disabled = next.disabled = items.length < 2;
