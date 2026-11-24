@@ -7,26 +7,22 @@
   const photo = viewer.querySelector('img');
   const [close, prev, next] = viewer.querySelectorAll('button');
   let items = [], index = 0, start = null;
-  const frontOnly = document.documentElement.classList.contains('front-mode');
-  function updateCoverSources() {
-    for (const link of document.querySelectorAll('a[data-front]')) {
+  const side = new URLSearchParams(location.search).get('view');
+  if (side === 'front' || side === 'back') {
+    for (const link of document.querySelectorAll(`a[data-${side}]`)) {
       const img = link.querySelector('img');
-      img.dataset.spreadSources ||= img.srcset;
-      img.srcset = frontOnly ? link.dataset.front : img.dataset.spreadSources;
-      img.classList.toggle('front-page', frontOnly);
+      link.href = link.dataset[side];
+      img.removeAttribute('srcset');
+      img.src = link.href;
+      img.classList.add('front-page');
     }
-  }
-  if (frontOnly) {
-    window.addEventListener('pageshow', updateCoverSources);
-    updateCoverSources();
   }
   function show() {
     const link = items[index];
     const name = link.querySelector('img').alt;
     photo.alt = name;
-    const front = frontOnly && link.dataset.front;
-    photo.classList.toggle('front-page', Boolean(front));
-    photo.src = front || link.href;
+    photo.classList.toggle('front-page', link.querySelector('img').classList.contains('front-page'));
+    photo.src = link.href;
     viewer.querySelector('strong').textContent = name;
     viewer.querySelector('output').textContent = (index + 1) + ' / ' + items.length;
     prev.disabled = next.disabled = items.length < 2;

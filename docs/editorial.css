@@ -130,9 +130,9 @@ body > header .filter:has(#compare[hidden]) { display:none; }
   .gallery-tools a, .gallery-tools label { padding: 0 8px; }
 }
 
-.gallery-tools nav[aria-label="갤러리 메뉴"] { display:grid; grid-template-columns:repeat(4,auto); }
+.gallery-tools nav[aria-label="갤러리 메뉴"] { display:grid; grid-template-columns:repeat(5,auto); }
 @media (max-width:480px) {
   body > header .gallery-tools { width:100%; }
-  .gallery-tools nav[aria-label="갤러리 메뉴"] { width:100%; grid-template-columns:repeat(4,1fr); }
+  .gallery-tools nav[aria-label="갤러리 메뉴"] { width:100%; grid-template-columns:repeat(5,minmax(0,1fr)); }
   .gallery-tools a { padding-inline:2px; }
 }
