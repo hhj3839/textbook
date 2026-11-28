@@ -2,178 +2,78 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>목사고을 우리 나주 · 기존·새 펼친표지 12안 비교</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>선정 표지 5안 · 목사고을 우리 나주</title>
   <style>
-    :root { color-scheme: light; --ink: #18352e; --link: #165e50; --line: #c8d6cf; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: #fcfdfb; color: var(--ink); font: 1rem/1.5 system-ui, "Malgun Gothic", sans-serif; word-break: keep-all; overflow-wrap: break-word; }
-    main { max-width: 86rem; margin: auto; padding: 0 clamp(1rem, 3vw, 3rem) 3rem; }
-    header { padding: clamp(1.5rem, 4vw, 3.5rem) 0 1.2rem; border-bottom: 2px solid var(--ink); }
-    h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.75rem); line-height: 1.25; letter-spacing: -.055em; }
-    h2 { margin: 0 0 .65rem; font-size: clamp(1.16rem, 2.1vw, 1.52rem); }
-    h2 span { color: var(--link); font-variant-numeric: tabular-nums; margin-right: .4em; }
-    p { margin: .65rem 0 0; color: #465c53; }
-    nav { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem 1.2rem; margin-top: .8rem; }
-    a { color: var(--link); text-underline-offset: .22em; }
-    nav a { padding-block: .25rem; }
-    details { margin-top: .75rem; }
-    summary { cursor: pointer; color: var(--link); width: fit-content; }
-    :focus-visible { outline: 3px solid #a7540e; outline-offset: 3px; }
-    .versions { gap: .35rem; }
-    .versions span { margin-right: .5rem; font-weight: 650; }
-    .versions a { padding: .38rem .68rem; border: 1px solid var(--line); border-radius: .3rem; text-decoration: none; }
-    .versions a[aria-current] { background: var(--link); border-color: var(--link); color: white; }
-    .pair { margin-top: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); scroll-margin-top: 1rem; }
-    .pictures { display: grid; grid-template-columns: minmax(0, 1fr); gap: .95rem clamp(1.1rem, 2vw, 2rem); }
-    figure { margin: 0; min-width: 0; }
-    figcaption { display: flex; align-items: baseline; flex-wrap: wrap; gap: .2em .65em; margin-bottom: .35rem; }
-    figcaption b { color: var(--link); }
-    .art { display: block; background: white; box-shadow: 0 0 0 1px var(--line); cursor: zoom-in; }
-    .art:hover { box-shadow: 0 0 0 2px var(--link); }
-    img { display: block; width: 100%; height: auto; }
-    @media (min-width: 44rem) { .pictures { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    :root { color-scheme:light; color:#173b31; background:#fcfdfb; font:1rem/1.5 system-ui,"Malgun Gothic",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; }
+    main { max-width:78rem; margin:auto; padding:clamp(1rem,3vw,3rem); }
+    h1 { margin:0; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.25; letter-spacing:-.045em; }
+    h2 { font-size:clamp(1.1rem,2vw,1.4rem); margin:0 0 .4rem; }
+    h2 span { font-variant-numeric:tabular-nums; color:#12644f; margin-right:.45em; }
+    header { border-bottom:2px solid #173b31; padding-bottom:1rem; }
+    nav { display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; margin-top:.85rem; }
+    a { color:#12644f; text-underline-offset:.22em; }
+    a:focus-visible { outline:3px solid #a85602; outline-offset:3px; }
+    .cards { display:grid; grid-template-columns:minmax(0,1fr); gap:1.65rem clamp(1rem,2vw,2rem); margin-top:1.5rem; }
+    figure { margin:0; }
+    figure a { display:block; background:white; box-shadow:0 0 0 1px #c5d5cc; cursor:zoom-in; }
+    img { width:100%; height:auto; display:block; }
+    figcaption { color:#42584d; margin-top:.35rem; font-size:.94rem; }
+    @media(min-width:54rem) { .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <h1>목사고을 우리 나주 · 펼친표지 12안</h1>
-      <p>06·21·30·77·81·82번의 기존 표지와 새 표지를 같은 번호끼리 모았습니다. 그림을 누르면 펼친 원본을 크게 볼 수 있습니다.</p>
-      <nav class="versions" aria-label="새 표지와 비교할 판본">
-        <span>비교할 판본</span>
-        <a href="six-directions.html" data-base="existing" aria-current="page">기존 펼친표지</a>
-        <a href="?base=top" data-base="top">상단 제목판</a>
-        <a href="?base=original" data-base="original">최초 원화</a>
-        <a href="?base=paired" data-base="paired">앞뒤 두 장면 시안</a>
-      </nav>
-      <nav aria-label="표지 자료">
+      <h1>선정 펼친표지 5안</h1>
+      <nav aria-label="선정 표지 자료">
         <a href="index.html?menu=4">표지 목록</a>
-        <a href="index.html?menu=4&amp;view=front">앞표지 보기</a>
-        <a href="gallery/front-centered/six-spreads.pdf">가운데 제목 펼친표지 PDF</a>
-        <a href="gallery/front-centered/six-spreads.jpg">가운데 제목 펼친표지 한 장으로 보기</a>
+        <a href="index.html?menu=4&amp;view=front">앞표지만 보기</a>
+        <a href="index.html?menu=4&amp;view=back">뒷표지만 보기</a>
+        <a href="gallery/selected-five/five-spreads.pdf">다섯 안 PDF</a>
+        <a href="gallery/selected-five/five-spreads.jpg">펼친표지 모음</a>
+        <a href="gallery/selected-five/five-fronts.jpg">앞표지 모음</a>
       </nav>
-      <details>
-        <summary>다른 표지 자료</summary>
-        <nav aria-label="앞표지 모음과 이전 시안">
-          <a href="gallery/front-centered/six-fronts.jpg">가운데 제목 앞표지 모음</a>
-          <a href="gallery/panoramic-wraps/six-spreads.pdf">상단 제목판 PDF</a>
-          <a href="gallery/common-five-spreads/six-spreads.pdf">앞뒤 두 장면 시안 PDF</a>
-          <a href="gallery/common-five-spreads/six-spreads.jpg">앞뒤 두 장면 시안 모음</a>
-          <a href="gallery/six-directions/six-covers.jpg">이전 앞표지 모음</a>
-          <a href="cover-comparison.html">최초 원화와 수정본 비교</a>
-        </nav>
-      </details>
     </header>
-    <section id="cover-06" class="pair" data-id="06" data-original="논마다 반복되는 무늬" aria-labelledby="title-06">
-      <h2 id="title-06"><span>06</span>나주평야</h2>
-      <div class="pictures">
-        <figure class="base">
-          <figcaption><b>기존 펼친표지</b><span>황금빛 가을 논</span></figcaption>
-          <a class="art" href="gallery/clear-edition/cover-06.jpg" aria-label="06번 기존 펼친표지 크게 보기"><img src="gallery/clear-edition/cover-06.jpg" width="1565" height="1005" alt="06번 기존 펼친표지 · 황금빛 가을 논" decoding="async"></a>
+    <div class="cards">
+      <section id="cover-06">
+        <h2><span>06</span>가을 들녘에서 보는 나주</h2>
+        <figure>
+          <a href="gallery/selected-five/cover-06.jpg" aria-label="06번 펼친표지 크게 보기"><img src="gallery/selected-five/cover-06.jpg" alt="벼를 벤 들녘과 금빛 벼 이삭, 영산강을 담은 앞뒤 표지" width="2000" height="1284" decoding="async"></a>
+          <figcaption>나주평야 · 두 장면 시안</figcaption>
         </figure>
-        <figure class="latest">
-          <figcaption><b>새 펼친표지 · 가운데 제목</b><span>가을 들녘에서 보는 나주</span></figcaption>
-          <a class="art" href="gallery/front-centered/cover-06.jpg" aria-label="06번 새 펼친표지 크게 보기"><img src="gallery/front-centered/cover-06.jpg" width="2000" height="1284" alt="벼를 벤 들녘에서 금빛 벼 이삭과 영산강의 황포돛배로 이어지는 가을 풍경" decoding="async"></a>
+      </section>
+      <section id="cover-21">
+        <h2><span>21</span>골목길을 따라 만나는 나주</h2>
+        <figure>
+          <a href="gallery/selected-five/cover-21.jpg" aria-label="21번 펼친표지 크게 보기"><img src="gallery/selected-five/cover-21.jpg" alt="작은 돌다리와 한옥 골목을 따라가는 나주 그림지도" width="2000" height="1284" decoding="async" loading="lazy"></a>
+          <figcaption>마을길 · 두 장면 시안</figcaption>
         </figure>
-      </div>
-    </section>
-    <section id="cover-21" class="pair" data-id="21" data-original="작은 입체 지도" aria-labelledby="title-21">
-      <h2 id="title-21"><span>21</span>마을길</h2>
-      <div class="pictures">
-        <figure class="base">
-          <figcaption><b>기존 펼친표지</b><span>마을길과 작은 다리</span></figcaption>
-          <a class="art" href="gallery/clear-edition/cover-21.jpg" aria-label="21번 기존 펼친표지 크게 보기"><img src="gallery/clear-edition/cover-21.jpg" width="1565" height="1005" alt="21번 기존 펼친표지 · 마을길과 작은 다리" decoding="async" loading="lazy"></a>
+      </section>
+      <section id="cover-30">
+        <h2><span>30</span>처마 아래에서 본 나주</h2>
+        <figure>
+          <a href="gallery/selected-five/cover-30.jpg" aria-label="30번 펼친표지 크게 보기"><img src="gallery/selected-five/cover-30.jpg" alt="단청 처마 아래로 물길과 황포돛배, 빛가람 풍경이 보이는 펼친표지" width="2000" height="1284" decoding="async" loading="lazy"></a>
+          <figcaption>빛가람과 옛 도심 · 기존 펼친표지</figcaption>
         </figure>
-        <figure class="latest">
-          <figcaption><b>새 펼친표지 · 가운데 제목</b><span>골목길을 따라 만나는 나주</span></figcaption>
-          <a class="art" href="gallery/front-centered/cover-21.jpg" aria-label="21번 새 펼친표지 크게 보기"><img src="gallery/front-centered/cover-21.jpg" width="2000" height="1284" alt="배꽃 핀 마을 골목과 돌다리에서 강줄기를 따라 금성관과 황포돛배를 찾는 그림지도" decoding="async" loading="lazy"></a>
+      </section>
+      <section id="cover-81">
+        <h2><span>81</span>영산강을 따라 읽는 나주</h2>
+        <figure>
+          <a href="gallery/selected-five/cover-81.jpg" aria-label="81번 펼친표지 크게 보기"><img src="gallery/selected-five/cover-81.jpg" alt="영산포 나루터의 밧줄부터 황포돛배와 하얀 등대까지 이어지는 강가" width="2000" height="1284" decoding="async" loading="lazy"></a>
+          <figcaption>영산강 · 상단 제목판 원화</figcaption>
         </figure>
-      </div>
-    </section>
-    <section id="cover-30" class="pair" data-id="30" data-original="꽃무늬가 반복되는 처마" aria-labelledby="title-30">
-      <h2 id="title-30"><span>30</span>빛가람과 옛 도심</h2>
-      <div class="pictures">
-        <figure class="base">
-          <figcaption><b>기존 펼친표지</b><span>처마 아래에서 본 나주</span></figcaption>
-          <a class="art" href="gallery/clear-edition/cover-30.jpg" aria-label="30번 기존 펼친표지 크게 보기"><img src="gallery/clear-edition/cover-30.jpg" width="1565" height="1005" alt="30번 기존 펼친표지 · 처마 아래에서 본 나주" decoding="async" loading="lazy"></a>
+      </section>
+      <section id="cover-82">
+        <h2><span>82</span>금성관 마당에서 시작하는 답사</h2>
+        <figure>
+          <a href="gallery/selected-five/cover-82.jpg" aria-label="82번 펼친표지 크게 보기"><img src="gallery/selected-five/cover-82.jpg" alt="처마 그늘에서 바라본 금성관 마당과 손에 든 답사 지도" width="2000" height="1284" decoding="async" loading="lazy"></a>
+          <figcaption>금성관 · 상단 제목판 원화</figcaption>
         </figure>
-        <figure class="latest">
-          <figcaption><b>새 펼친표지 · 가운데 제목</b><span>옛 처마와 오늘의 빛가람</span></figcaption>
-          <a class="art" href="gallery/front-centered/cover-30.jpg" aria-label="30번 새 펼친표지 크게 보기"><img src="gallery/front-centered/cover-30.jpg" width="2000" height="1284" alt="왼쪽 단청 처마 아래에서 오른쪽 빛가람호수공원 전망대와 강가를 바라보는 풍경" decoding="async" loading="lazy"></a>
-        </figure>
-      </div>
-    </section>
-    <section id="cover-77" class="pair" data-id="77" data-original="쪽빛 천과 빛가람호수공원 전망대" aria-labelledby="title-77">
-      <h2 id="title-77"><span>77</span>쪽염색</h2>
-      <div class="pictures">
-        <figure class="base">
-          <figcaption><b>기존 펼친표지</b><span>쪽빛 천을 펼친 아이들</span></figcaption>
-          <a class="art" href="gallery/clear-edition/cover-77.jpg" aria-label="77번 기존 펼친표지 크게 보기"><img src="gallery/clear-edition/cover-77.jpg" width="1565" height="1005" alt="77번 기존 펼친표지 · 쪽빛 천을 펼친 아이들" decoding="async" loading="lazy"></a>
-        </figure>
-        <figure class="latest">
-          <figcaption><b>새 펼친표지 · 가운데 제목</b><span>쪽빛 천에 펼쳐지는 나주</span></figcaption>
-          <a class="art" href="gallery/front-centered/cover-77.jpg" aria-label="77번 새 펼친표지 크게 보기"><img src="gallery/front-centered/cover-77.jpg" width="2000" height="1284" alt="아이가 펼친 한 폭의 쪽빛 천 위로 강물 무늬와 나주의 장소들이 이어지는 장면" decoding="async" loading="lazy"></a>
-        </figure>
-      </div>
-    </section>
-    <section id="cover-81" class="pair" data-id="81" data-original="황포돛배와 영산강" aria-labelledby="title-81">
-      <h2 id="title-81"><span>81</span>영산강</h2>
-      <div class="pictures">
-        <figure class="base">
-          <figcaption><b>기존 펼친표지</b><span>영산강의 황포돛배</span></figcaption>
-          <a class="art" href="gallery/clear-edition/cover-81.jpg" aria-label="81번 기존 펼친표지 크게 보기"><img src="gallery/clear-edition/cover-81.jpg" width="1565" height="1005" alt="81번 기존 펼친표지 · 영산강의 황포돛배" decoding="async" loading="lazy"></a>
-        </figure>
-        <figure class="latest">
-          <figcaption><b>새 펼친표지 · 가운데 제목</b><span>영산강을 따라 읽는 나주</span></figcaption>
-          <a class="art" href="gallery/front-centered/cover-81.jpg" aria-label="81번 새 펼친표지 크게 보기"><img src="gallery/front-centered/cover-81.jpg" width="2000" height="1284" alt="왼쪽 나루터에서 강물의 흐름을 따라 오른쪽 영산포등대와 황포돛배를 바라보는 풍경" decoding="async" loading="lazy"></a>
-        </figure>
-      </div>
-    </section>
-    <section id="cover-82" class="pair" data-id="82" data-original="금성관 마당" aria-labelledby="title-82">
-      <h2 id="title-82"><span>82</span>금성관</h2>
-      <div class="pictures">
-        <figure class="base">
-          <figcaption><b>기존 펼친표지</b><span>금성관 마당</span></figcaption>
-          <a class="art" href="gallery/clear-edition/cover-82.jpg" aria-label="82번 기존 펼친표지 크게 보기"><img src="gallery/clear-edition/cover-82.jpg" width="1565" height="1005" alt="82번 기존 펼친표지 · 금성관 마당" decoding="async" loading="lazy"></a>
-        </figure>
-        <figure class="latest">
-          <figcaption><b>새 펼친표지 · 가운데 제목</b><span>금성관 마당에서 시작하는 답사</span></figcaption>
-          <a class="art" href="gallery/front-centered/cover-82.jpg" aria-label="82번 새 펼친표지 크게 보기"><img src="gallery/front-centered/cover-82.jpg" width="2000" height="1284" alt="처마 그늘에서 금성관으로 이어지는 마당과 아이가 펼친 나주 답사 지도" decoding="async" loading="lazy"></a>
-        </figure>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
-  <script>
-    const versions = {
-      top: { label: '상단 제목판', directory: 'panoramic-wraps', width: 2000, height: 1284 },
-      original: { label: '최초 원화', directory: 'clear-edition/originals', width: 1565, height: 1005 },
-      paired: { label: '앞뒤 두 장면 시안', directory: 'common-five-spreads', width: 2000, height: 1284 }
-    };
-    const choice = new URLSearchParams(location.search).get('base');
-    if (Object.hasOwn(versions, choice)) {
-      const edition = versions[choice];
-      for (const tab of document.querySelectorAll('[data-base]')) {
-        if (tab.dataset.base === choice) tab.setAttribute('aria-current', 'page');
-        else tab.removeAttribute('aria-current');
-      }
-      for (const pair of document.querySelectorAll('.pair')) {
-        const number = pair.dataset.id;
-        const figure = pair.querySelector('.base');
-        const title = choice === 'original' ? pair.dataset.original : pair.querySelector('.latest figcaption span').textContent;
-        const link = figure.querySelector('a');
-        const image = link.querySelector('img');
-        const path = 'gallery/' + edition.directory + '/cover-' + number + '.jpg';
-        figure.querySelector('figcaption b').textContent = edition.label;
-        figure.querySelector('figcaption span').textContent = title;
-        link.href = path;
-        link.setAttribute('aria-label', number + '번 ' + edition.label + ' 크게 보기');
-        image.width = edition.width;
-        image.height = edition.height;
-        image.alt = number + '번 ' + edition.label + ' · ' + title;
-        image.src = path;
-      }
-    }
-  </script>
 </body>
 </html>
